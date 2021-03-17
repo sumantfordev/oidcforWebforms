@@ -24,11 +24,11 @@ namespace WebApplication10
             app.SetDefaultSignInAsAuthenticationType(CookieAuthenticationDefaults.AuthenticationType);
 
             app.UseCookieAuthentication(new CookieAuthenticationOptions());
-            var extranet_sunchemical = new OpenIdConnectAuthenticationOptions
+            var extranet_url = new OpenIdConnectAuthenticationOptions
             {
                 AuthenticationType = "extranet_sunchemical ",
-                ClientId = "bdbdbdbdbdbdbdb-c63f-476a-9bb0-0281a6d499b5",
-                ClientSecret = "b46cb48f-c83b-4101-b907-bf040bb99f4b",
+                ClientId = "bdbdbdbdbdbdbdb-c63f-476a-9bb0-0281a6d499b",
+                ClientSecret = "b46cb48f-c83b-4101-b907-bf040bb994b",
                 RedirectUri = "http://extranet_sunchemical.com/",
                 ResponseType = "code id_token",
                 SaveTokens = true,
@@ -43,7 +43,7 @@ namespace WebApplication10
                
             };
 
-            var sunchemical = new OpenIdConnectAuthenticationOptions
+            var internetconfig = new OpenIdConnectAuthenticationOptions
             {
                 AuthenticationType = "sunchemical",
                 ClientId = "abababababababa",
@@ -63,8 +63,8 @@ namespace WebApplication10
             };
 
             
-            app.UseOpenIdConnectAuthentication(extranet_sunchemical);
-            app.UseOpenIdConnectAuthentication(sunchemical);
+            app.UseOpenIdConnectAuthentication(extranet_url);
+            app.UseOpenIdConnectAuthentication(internetconfig);
 
 
             System.Net.ServicePointManager.ServerCertificateValidationCallback +=
